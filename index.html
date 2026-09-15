@@ -1,1264 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Yabsa Habtamu — Digital Marketing</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
-  --bg: #1a1713;
-  --bg-panel: #211d18;
-  --bg-cover: #262019;
-  --fg: #f2ece2;
-  --fg-dim: #b3a999;
-  --fg-faint: #7a7266;
-  --accent: #d8a44e;
-  --accent-soft: #a17b3c;
-  --line: rgba(242,236,226,0.12);
-  --serif: 'Fraunces', serif;
-  --sans: 'IBM Plex Sans', sans-serif;
-}
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:var(--bg);
-  color:var(--fg);
-  font-family:var(--sans);
-  line-height:1.55;
-  -webkit-font-smoothing:antialiased;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-img{
-  max-width:100%;
-  display:block;
-}
-
-.wrap{
-  max-width:1040px;
-  margin:0 auto;
-  padding:0 28px;
-}
-
-
-/* =========================
-   NAVIGATION
-========================= */
-
-header.nav{
-  position:sticky;
-  top:0;
-  z-index:40;
-  background:rgba(26,23,19,0.86);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
-}
-
-.nav-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:16px 28px;
-  max-width:1040px;
-  margin:0 auto;
-}
-
-.mark{
-  font-family:var(--serif);
-  font-size:1.15rem;
-  font-weight:500;
-  letter-spacing:0.01em;
-}
-
-.nav-links{
-  display:flex;
-  gap:28px;
-  font-size:0.92rem;
-  color:var(--fg-dim);
-}
-
-.nav-links a:hover{
-  color:var(--fg);
-}
-
-.nav-cta{
-  font-size:0.88rem;
-  color:var(--accent);
-  border:1px solid var(--accent-soft);
-  padding:7px 14px;
-  border-radius:999px;
-  white-space:nowrap;
-}
-
-.nav-cta:hover{
-  background:var(--accent);
-  color:#1a1713;
-}
-
-@media(max-width:640px){
-  .nav-links{
-    display:none;
-  }
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-  padding:96px 0 72px;
-  position:relative;
-  overflow:hidden;
-}
-
-.hero-tag{
-  font-size:0.95rem;
-  color:var(--fg-dim);
-  margin-bottom:22px;
-}
-
-.hero h1{
-  font-family:var(--serif);
-  font-weight:500;
-  font-size:clamp(2.3rem,6vw,3.6rem);
-  line-height:1.12;
-  max-width:15ch;
-  letter-spacing:-0.01em;
-}
-
-.hero p{
-  margin-top:24px;
-  max-width:46ch;
-  color:var(--fg-dim);
-  font-size:1.05rem;
-}
-
-.hero-actions{
-  margin-top:36px;
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:13px 22px;
-  border-radius:999px;
-  font-size:0.95rem;
-  font-weight:500;
-}
-
-.btn-solid{
-  background:var(--accent);
-  color:#1a1713;
-}
-
-.btn-solid:hover{
-  background:#e6b866;
-}
-
-.btn-ghost{
-  border:1px solid var(--line);
-  color:var(--fg);
-}
-
-.btn-ghost:hover{
-  border-color:var(--fg-dim);
-}
-
-.hero-frames{
-  position:absolute;
-  right:-60px;
-  top:40px;
-  display:flex;
-  gap:18px;
-  transform:rotate(6deg);
-  opacity:0.55;
-  pointer-events:none;
-}
-
-.ghost-phone{
-  width:92px;
-  height:170px;
-  border-radius:16px;
-  border:1.5px solid var(--line);
-}
-
-.ghost-phone:nth-child(2){
-  margin-top:34px;
-}
-
-@media(max-width:900px){
-  .hero-frames{
-    display:none;
-  }
-}
-
-
-/* =========================
-   SECTIONS
-========================= */
-
-.section{
-  padding:76px 0;
-  border-top:1px solid var(--line);
-}
-
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:baseline;
-  gap:24px;
-  margin-bottom:44px;
-  flex-wrap:wrap;
-}
-
-.section-head h2{
-  font-family:var(--serif);
-  font-weight:500;
-  font-size:clamp(1.6rem,3.5vw,2.1rem);
-}
-
-.section-head p{
-  color:var(--fg-dim);
-  max-width:34ch;
-  font-size:0.95rem;
-}
-
-
-/* =========================
-   SERVICES
-========================= */
-
-.services{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:0;
-  border-top:1px solid var(--line);
-}
-
-.service{
-  padding:30px 26px 30px 0;
-  border-bottom:1px solid var(--line);
-}
-
-.service + .service{
-  border-left:1px solid var(--line);
-  padding-left:26px;
-}
-
-.service h3{
-  font-family:var(--serif);
-  font-weight:500;
-  font-size:1.15rem;
-  margin-bottom:10px;
-}
-
-.service p{
-  color:var(--fg-dim);
-  font-size:0.93rem;
-}
-
-@media(max-width:760px){
-
-  .services{
-    grid-template-columns:1fr;
-  }
-
-  .service + .service{
-    border-left:none;
-    padding-left:0;
-  }
-
-}
-
-
-/* =========================
-   WORK
-========================= */
-
-.client-block + .client-block{
-  margin-top:56px;
-}
-
-.client-head{
-  display:flex;
-  align-items:baseline;
-  justify-content:space-between;
-  gap:16px;
-  margin-bottom:20px;
-  flex-wrap:wrap;
-}
-
-.client-head h3{
-  font-family:var(--serif);
-  font-weight:500;
-  font-size:1.3rem;
-}
-
-.client-head span{
-  color:var(--fg-faint);
-  font-size:0.86rem;
-}
-
-.client-head p.desc{
-  color:var(--fg-dim);
-  font-size:0.93rem;
-  max-width:44ch;
-  margin-top:6px;
-}
-
-.reel-row{
-  display:flex;
-  gap:18px;
-  overflow-x:auto;
-  padding-bottom:6px;
-}
-
-.reel-card{
-  flex:0 0 auto;
-  width:156px;
-  border-radius:18px;
-  border:1px solid var(--line);
-  background:var(--bg-panel);
-  overflow:hidden;
-  transition:border-color 0.15s ease;
-}
-
-.reel-card:hover{
-  border-color:var(--accent-soft);
-}
-
-.reel-card:hover .reel-play{
-  border-color:var(--accent);
-}
-
-.reel-cover{
-  position:relative;
-  height:208px;
-  background:var(--bg-cover);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
-
-.reel-cover img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition:transform 0.2s ease;
-}
-
-.reel-card:hover .reel-cover img{
-  transform:scale(1.04);
-}
-
-.reel-play{
-  position:absolute;
-  right:10px;
-  bottom:10px;
-  width:32px;
-  height:32px;
-  border-radius:50%;
-  border:1px solid var(--line);
-  background:rgba(26,23,19,0.7);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:border-color 0.15s ease;
-}
-
-.reel-play svg{
-  width:11px;
-  height:11px;
-  fill:var(--accent);
-  margin-left:1px;
-}
-
-.reel-label{
-  font-size:0.78rem;
-  color:var(--fg-dim);
-  text-align:left;
-  padding:12px 14px 14px;
-}
-
-.reel-label b{
-  color:var(--fg);
-  font-weight:500;
-  display:block;
-  margin-bottom:2px;
-}
-
-
-/* =========================
-   GENESIS SPECIAL COVER
-========================= */
-
-.genesis-cover{
-  background:
-    linear-gradient(
-      145deg,
-      #332818,
-      #1f1a15
-    );
-  position:relative;
-}
-
-.genesis-cover::before{
-  content:"GENESIS";
-  position:absolute;
-  font-family:var(--serif);
-  font-size:1.25rem;
-  letter-spacing:0.08em;
-  color:var(--accent);
-  opacity:0.9;
-}
-
-.genesis-cover::after{
-  content:"Investment Service";
-  position:absolute;
-  bottom:34px;
-  font-size:0.72rem;
-  color:var(--fg-dim);
-  letter-spacing:0.04em;
-}
-
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-grid{
-  display:grid;
-  grid-template-columns:1.1fr 0.9fr;
-  gap:48px;
-}
-
-.about-grid p{
-  color:var(--fg-dim);
-  margin-bottom:16px;
-  max-width:52ch;
-}
-
-.stat-list{
-  display:flex;
-  flex-direction:column;
-  gap:22px;
-}
-
-.stat{
-  border-top:1px solid var(--line);
-  padding-top:14px;
-}
-
-.stat b{
-  font-family:var(--serif);
-  font-size:1.7rem;
-  font-weight:500;
-  display:block;
-  color:var(--accent);
-}
-
-.stat span{
-  color:var(--fg-dim);
-  font-size:0.88rem;
-}
-
-@media(max-width:760px){
-  .about-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-panel{
-  background:var(--bg-panel);
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:48px;
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  flex-wrap:wrap;
-  gap:28px;
-}
-
-.contact-panel h2{
-  font-family:var(--serif);
-  font-weight:500;
-  font-size:clamp(1.6rem,4vw,2.2rem);
-  max-width:14ch;
-}
-
-.contact-info{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-  font-size:0.98rem;
-}
-
-.contact-info a:hover{
-  color:var(--accent);
-}
-
-.contact-info .loc{
-  color:var(--fg-dim);
-}
-
-footer{
-  border-top:1px solid var(--line);
-  padding:28px 0 40px;
-  display:flex;
-  justify-content:space-between;
-  color:var(--fg-faint);
-  font-size:0.85rem;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-@media(max-width:640px){
-
-  .contact-panel{
-    flex-direction:column;
-    align-items:flex-start;
-    padding:34px 24px;
-  }
-
-}
-
-</style>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Genesis Investment Service</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #171512;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            width: 100%;
+            border-bottom: 1px solid #35312b;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #171512;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d4a84b;
+        }
+
+        nav a {
+            color: #aaa39a;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #d4a84b;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 25px 50px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            color: #d4a84b;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            color: #aaa39a;
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           GENESIS SECTION
+        ========================= */
+
+        .genesis-section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 35px 25px 80px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 28px;
+        }
+
+        .section-header h2 {
+            font-family: Georgia, serif;
+            font-size: 30px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: #aaa39a;
+            font-size: 15px;
+        }
+
+        .section-name {
+            color: #77716a;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           VIDEO CARDS
+        ========================= */
+
+        .video-grid {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .video-card {
+            width: 156px;
+            background: #211e1a;
+            border: 1px solid #3a3732;
+            border-radius: 17px;
+            overflow: hidden;
+            transition: 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-6px);
+            border-color: #a77c2e;
+        }
+
+
+        /* =========================
+           COVER IMAGE
+        ========================= */
+
+        .video-cover {
+            position: relative;
+            width: 100%;
+            height: 278px;
+            overflow: hidden;
+            background: #241f18;
+        }
+
+        .video-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .video-card:hover .video-cover img {
+            transform: scale(1.04);
+        }
+
+
+        /* =========================
+           PLAY BUTTON
+        ========================= */
+
+        .play-button {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+
+            width: 35px;
+            height: 35px;
+
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: rgba(25, 22, 18, 0.85);
+
+            border: 1px solid #4a453d;
+
+            color: #d4a84b;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           CARD TEXT
+        ========================= */
+
+        .video-info {
+            padding: 13px;
+        }
+
+        .video-info strong {
+            display: block;
+            color: #ffffff;
+            font-size: 13px;
+            margin-bottom: 7px;
+        }
+
+        .video-info span {
+            color: #aaa39a;
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            max-width: 850px;
+            margin: 20px auto 80px;
+            padding: 0 25px;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-family: Georgia, serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .about p {
+            color: #aaa39a;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid #35312b;
+            text-align: center;
+            padding: 30px 20px;
+            color: #77716a;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 18px 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding: 50px 20px 35px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .genesis-section {
+                padding: 25px 20px 60px;
+            }
+
+            .section-header {
+                display: block;
+            }
+
+            .section-name {
+                display: none;
+            }
+
+            .video-grid {
+                gap: 12px;
+            }
+
+            .video-card {
+                width: calc(50% - 6px);
+            }
+
+            .video-cover {
+                height: 250px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+    <!-- =========================
+         HEADER
+    ========================= -->
 
-<header class="nav">
+    <header>
 
-  <div class="nav-inner">
+        <div class="logo">
+            GENESIS
+        </div>
 
-    <a class="mark" href="#top">
-      Yabsa Habtamu
-    </a>
+        <nav>
 
-    <nav class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-    </nav>
+            <a href="#home">
+                Home
+            </a>
 
-    <a
-      class="nav-cta"
-      href="tel:+251937821150">
-      Call 093 782 1150
-    </a>
+            <a href="#services">
+                Services
+            </a>
 
-  </div>
+            <a href="#about">
+                About
+            </a>
 
-</header>
+        </nav>
 
-
-<main id="top">
+    </header>
 
 
-<!-- =========================
-     HERO
-========================= -->
 
-<section class="hero wrap">
+    <!-- =========================
+         HERO
+    ========================= -->
 
-  <div class="hero-frames" aria-hidden="true">
-    <div class="ghost-phone"></div>
-    <div class="ghost-phone"></div>
-  </div>
+    <section class="hero" id="home">
 
-  <p class="hero-tag">
-    Digital marketing · Addis Ababa
-  </p>
-
-  <h1>
-    I help small businesses show up well on video.
-  </h1>
-
-  <p>
-    Over three years planning, filming, editing, and running
-    social pages for brands across Addis Ababa — the projects
-    below are pages I've worked on directly.
-  </p>
-
-  <div class="hero-actions">
-
-    <!-- TELEGRAM -->
-    <a
-      class="btn btn-solid"
-      href="https://t.me/Yeab124Production"
-      target="_blank"
-      rel="noopener">
-      Message me on Telegram
-    </a>
-
-    <a
-      class="btn btn-ghost"
-      href="#work">
-      See the work
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     SERVICES
-========================= -->
-
-<section class="section" id="services">
-
-  <div class="wrap">
-
-    <div class="section-head">
-
-      <h2>What I do</h2>
-
-      <p>
-        Hands-on marketing work, not just strategy decks.
-      </p>
-
-    </div>
-
-
-    <div class="services">
-
-      <div class="service">
-
-        <h3>
-          Short-form video editing
-        </h3>
-
-        <p>
-          Turning raw footage into fast, native-feeling
-          TikTok and Reels content that fits how people
-          actually watch.
-        </p>
-
-      </div>
-
-
-      <div class="service">
-
-        <h3>
-          Social account management
-        </h3>
-
-        <p>
-          Running the day-to-day: posting schedules,
-          captions, replies, and keeping a page consistent
-          over time.
-        </p>
-
-      </div>
-
-
-      <div class="service">
-
-        <h3>
-          Content strategy
-        </h3>
-
-        <p>
-          Deciding what a brand should post, for which
-          audience, and why it fits the business behind it.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     WORK
-========================= -->
-
-<section class="section" id="work">
-
-  <div class="wrap">
-
-    <div class="section-head">
-
-      <h2>Selected work</h2>
-
-      <p>
-        Tap a card to open the video on TikTok.
-      </p>
-
-    </div>
-
-
-    <!-- ==================================
-         GENESIS INVESTMENT SERVICE
-         FIRST PORTFOLIO ITEM
-    =================================== -->
-
-    <div class="client-block">
-
-      <div class="client-head">
-
-        <div>
-
-          <h3>
+        <h1>
             Genesis Investment Service
-          </h3>
-
-          <p class="desc">
-            Content produced for Genesis Investment Service.
-          </p>
-
-        </div>
-
-        <span>
-          Genesis Investment Service
-        </span>
-
-      </div>
-
-
-      <div class="reel-row">
-
-
-        <!-- GENESIS VIDEO 1 -->
-
-        <a
-          class="reel-card"
-          href="https://www.tiktok.com/@genesisinvestmentservice/video/7430842789685972229"
-          target="_blank"
-          rel="noopener">
-
-          <div class="reel-cover genesis-cover">
-
-            <div class="reel-play">
-
-              <svg viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-
-            </div>
-
-          </div>
-
-          <div class="reel-label">
-            <b>Video 1</b>
-            View on TikTok
-          </div>
-
-        </a>
-
-
-        <!-- GENESIS VIDEO 2 -->
-
-        <a
-          class="reel-card"
-          href="https://www.tiktok.com/@genesisinvestmentservice/video/7426389952591678726"
-          target="_blank"
-          rel="noopener">
-
-          <div class="reel-cover genesis-cover">
-
-            <div class="reel-play">
-
-              <svg viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-
-            </div>
-
-          </div>
-
-          <div class="reel-label">
-            <b>Video 2</b>
-            View on TikTok
-          </div>
-
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- ==================================
-         FASSILO WOODWORK
-    =================================== -->
-
-    <div class="client-block">
-
-      <div class="client-head">
-
-        <div>
-
-          <h3>
-            Fassilo Woodwork
-          </h3>
-
-          <p class="desc">
-            Content produced for @fassilowoodwork's TikTok page.
-          </p>
-
-        </div>
-
-        <span>
-          @fassilowoodwork
-        </span>
-
-      </div>
-
-
-      <div class="reel-row">
-
-
-        <!-- VIDEO 1 -->
-
-        <a
-          class="reel-card"
-          href="https://www.tiktok.com/@fassilowoodwork/video/7675277850311789842"
-          target="_blank"
-          rel="noopener">
-
-          <div class="reel-cover">
-
-            <img
-              src="Screenshot%202026-09-14%20155649.png"
-              alt="Fassilo Woodwork TikTok video 1 cover"
-              loading="lazy">
-
-            <div class="reel-play">
-
-              <svg viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-
-            </div>
-
-          </div>
-
-          <div class="reel-label">
-            <b>Video 1</b>
-            View on TikTok
-          </div>
-
-        </a>
-
-
-        <!-- VIDEO 2 -->
-
-        <a
-          class="reel-card"
-          href="https://www.tiktok.com/@fassilowoodwork/video/7670088502079507730"
-          target="_blank"
-          rel="noopener">
-
-          <div class="reel-cover">
-
-            <img
-              src="Screenshot%202026-09-14%20155727.png"
-              alt="Fassilo Woodwork TikTok video 2 cover"
-              loading="lazy">
-
-            <div class="reel-play">
-
-              <svg viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-
-            </div>
-
-          </div>
-
-          <div class="reel-label">
-            <b>Video 2</b>
-            View on TikTok
-          </div>
-
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- ==================================
-         ABOSHEWA TRADING
-    =================================== -->
-
-    <div class="client-block">
-
-      <div class="client-head">
-
-        <div>
-
-          <h3>
-            Aboshewa Trading
-          </h3>
-
-          <p class="desc">
-            Content produced for @aboshewa_trading's TikTok page.
-          </p>
-
-        </div>
-
-        <span>
-          @aboshewa_trading
-        </span>
-
-      </div>
-
-
-      <div class="reel-row">
-
-
-        <!-- VIDEO 1 -->
-
-        <a
-          class="reel-card"
-          href="https://www.tiktok.com/@aboshewa_trading/video/7663128086724070677"
-          target="_blank"
-          rel="noopener">
-
-          <div class="reel-cover">
-
-            <img
-              src="Screenshot%202026-09-14%20155822.png"
-              alt="Aboshewa Trading TikTok video 1 cover"
-              loading="lazy">
-
-            <div class="reel-play">
-
-              <svg viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-
-            </div>
-
-          </div>
-
-          <div class="reel-label">
-            <b>Video 1</b>
-            View on TikTok
-          </div>
-
-        </a>
-
-
-        <!-- VIDEO 2 -->
-
-        <a
-          class="reel-card"
-          href="https://www.tiktok.com/@aboshewa_trading/video/7659061623310535957"
-          target="_blank"
-          rel="noopener">
-
-          <div class="reel-cover">
-
-            <img
-              src="Screenshot%202026-09-14%20155858.png"
-              alt="Aboshewa Trading TikTok video 2 cover"
-              loading="lazy">
-
-            <div class="reel-play">
-
-              <svg viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-
-            </div>
-
-          </div>
-
-          <div class="reel-label">
-            <b>Video 2</b>
-            View on TikTok
-          </div>
-
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- ==================================
-         THE SAUCE STUDIO
-    =================================== -->
-
-    <div class="client-block">
-
-      <div class="client-head">
-
-        <div>
-
-          <h3>
-            The Sauce Studio
-          </h3>
-
-          <p class="desc">
-            Content produced for @the.sauce.studio's TikTok page.
-          </p>
-
-        </div>
-
-        <span>
-          @the.sauce.studio
-        </span>
-
-      </div>
-
-
-      <div class="reel-row">
-
-
-        <!-- VIDEO 1 -->
-
-        <a
-          class="reel-card"
-          href="https://www.tiktok.com/@the.sauce.studio/video/7614054308283305237"
-          target="_blank"
-          rel="noopener">
-
-          <div class="reel-cover">
-
-            <img
-              src="Screenshot%202026-09-14%20160041.png"
-              alt="The Sauce Studio TikTok video 1 cover"
-              loading="lazy">
-
-            <div class="reel-play">
-
-              <svg viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-
-            </div>
-
-          </div>
-
-          <div class="reel-label">
-            <b>Video 1</b>
-            View on TikTok
-          </div>
-
-        </a>
-
-
-        <!-- VIDEO 2 -->
-
-        <a
-          class="reel-card"
-          href="https://www.tiktok.com/@the.sauce.studio/video/7612615246267682068"
-          target="_blank"
-          rel="noopener">
-
-          <div class="reel-cover">
-
-            <img
-              src="Screenshot%202026-09-14%20160054.png"
-              alt="The Sauce Studio TikTok video 2 cover"
-              loading="lazy">
-
-            <div class="reel-play">
-
-              <svg viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-
-            </div>
-
-          </div>
-
-          <div class="reel-label">
-            <b>Video 2</b>
-            View on TikTok
-          </div>
-
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section class="section" id="about">
-
-  <div class="wrap">
-
-    <div class="section-head">
-
-      <h2>About</h2>
-
-    </div>
-
-
-    <div class="about-grid">
-
-      <div>
+        </h1>
 
         <p>
-          I'm Yabsa Habtamu, a digital marketer based in
-          Addis Ababa. I work directly with small and growing
-          businesses — woodworkers, traders, studios, and
-          investment services — to build a presence on
-          video-first platforms like TikTok.
+            Building wealth. Creating opportunities.
+            Investing in your future.
         </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         GENESIS CONTENT
+    ========================= -->
+
+    <section class="genesis-section" id="services">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <h2>
+                    Genesis Investment Service
+                </h2>
+
+                <p>
+                    Content produced for Genesis Investment Service.
+                </p>
+
+            </div>
+
+            <span class="section-name">
+                Genesis Investment Service
+            </span>
+
+        </div>
+
+
+
+        <!-- =========================
+             VIDEO CARDS
+        ========================= -->
+
+        <div class="video-grid">
+
+
+            <!-- VIDEO 1 -->
+
+            <div class="video-card">
+
+                <div class="video-cover">
+
+                    <img
+                        src="Screenshot 2026-09-15 191144.png"
+                        alt="Genesis Investment Service Video 1">
+
+                    <div class="play-button">
+                        ▶
+                    </div>
+
+                </div>
+
+                <div class="video-info">
+
+                    <strong>
+                        Video 1
+                    </strong>
+
+                    <span>
+                        Genesis Investment Service
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- VIDEO 2 -->
+
+            <div class="video-card">
+
+                <div class="video-cover">
+
+                    <img
+                        src="Screenshot 2026-09-15 191112.png"
+                        alt="Genesis Investment Service Video 2">
+
+                    <div class="play-button">
+                        ▶
+                    </div>
+
+                </div>
+
+                <div class="video-info">
+
+                    <strong>
+                        Video 2
+                    </strong>
+
+                    <span>
+                        Genesis Investment Service
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section class="about" id="about">
+
+        <h2>
+            About Genesis
+        </h2>
 
         <p>
-          My work covers the full loop: shooting and editing
-          the content, managing the page it lives on, and
-          shaping a strategy so the posting has a purpose
-          rather than just filling a schedule.
+            Genesis Investment Service is focused on
+            creating opportunities, building wealth,
+            and helping people invest in their future.
         </p>
 
-      </div>
+    </section>
 
 
-      <div class="stat-list">
 
-        <div class="stat">
-          <b>3+ yrs</b>
-          <span>
-            Experience in digital marketing
-          </span>
-        </div>
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
-        <div class="stat">
-          <b>8</b>
-          <span>
-            Projects featured above
-          </span>
-        </div>
+    <footer>
 
-        <div class="stat">
-          <b>Addis Ababa</b>
-          <span>
-            Based and working locally
-          </span>
-        </div>
+        © 2026 Genesis Investment Service.
+        All rights reserved.
 
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section class="section" id="contact">
-
-  <div class="wrap">
-
-    <div class="contact-panel">
-
-      <h2>
-        Let's work together.
-      </h2>
-
-      <div class="contact-info">
-
-        <a href="tel:+251937821150">
-          093 782 1150
-        </a>
-
-        <!-- TELEGRAM -->
-        <a
-          href="https://t.me/Yeab124Production"
-          target="_blank"
-          rel="noopener">
-          Telegram: @Yeab124Production
-        </a>
-
-        <span class="loc">
-          Addis Ababa, Ethiopia
-        </span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-</main>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer class="wrap">
-
-  <span>
-    Yabsa Habtamu — Digital Marketing
-  </span>
-
-  <span>
-    Addis Ababa, Ethiopia
-  </span>
-
-</footer>
+    </footer>
 
 
 </body>
+
 </html>
