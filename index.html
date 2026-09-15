@@ -1,28 +1,2290 @@
-<!-- Genesis Investment Service Cover -->
-<section class="genesis-cover">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
 
-    <div class="cover-slider">
-        <img src="Screenshot 2026-09-14 155649.png" class="cover-image active" alt="Genesis Investment Service">
-        <img src="Screenshot 2026-09-14 155727.png" class="cover-image" alt="Genesis Investment Service">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Genesis Investment Service - Building wealth, creating opportunities and investing in the future.">
+
+    <title>Genesis Investment Service</title>
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #f7f8fa;
+            color: #17202a;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================================
+           COLORS
+        ========================================= */
+
+        :root {
+            --navy: #071a2f;
+            --navy-light: #0d2948;
+            --gold: #d4af37;
+            --gold-light: #f1d77a;
+            --white: #ffffff;
+            --light: #f7f8fa;
+            --dark: #111827;
+            --gray: #667085;
+            --border: #e5e7eb;
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            z-index: 1000;
+
+            background:
+                rgba(7, 26, 47, 0.96);
+
+            backdrop-filter: blur(10px);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+
+            height: 78px;
+
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            color: white;
+        }
+
+        .logo-mark {
+            width: 42px;
+            height: 42px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--gold);
+
+            color: var(--navy);
+
+            font-weight: 900;
+            font-size: 18px;
+        }
+
+        .logo-text {
+            font-size: 19px;
+            font-weight: 800;
+            letter-spacing: 0.3px;
+        }
+
+        .logo-text span {
+            display: block;
+
+            color: var(--gold);
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            color: white;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .nav-button {
+            padding: 11px 20px;
+
+            background: var(--gold);
+
+            color: var(--navy) !important;
+
+            border-radius: 5px;
+        }
+
+        .nav-button:hover {
+            background: white;
+        }
+
+
+        /* =========================================
+           HERO / COVER
+        ========================================= */
+
+        .hero {
+            position: relative;
+
+            width: 100%;
+            min-height: 720px;
+
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-slides {
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-slide {
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            opacity: 0;
+
+            transform: scale(1.04);
+
+            transition:
+                opacity 1.3s ease,
+                transform 6s ease;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .hero-overlay {
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 2;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(4, 16, 30, 0.88),
+                    rgba(4, 16, 30, 0.58),
+                    rgba(4, 16, 30, 0.28)
+                );
+        }
+
+        .hero-content {
+            position: relative;
+
+            z-index: 3;
+
+            width: 90%;
+            max-width: 1150px;
+
+            color: white;
+
+            padding-top: 70px;
+        }
+
+        .hero-label {
+            display: inline-block;
+
+            margin-bottom: 18px;
+
+            padding: 7px 14px;
+
+            border-left: 3px solid var(--gold);
+
+            background:
+                rgba(255,255,255,0.08);
+
+            color: var(--gold-light);
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 800px;
+
+            font-size: clamp(42px, 6vw, 76px);
+
+            line-height: 1.04;
+
+            font-weight: 900;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            max-width: 650px;
+
+            color: #e8edf3;
+
+            font-size: 19px;
+
+            line-height: 1.7;
+
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 14px 26px;
+
+            border-radius: 5px;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-primary:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            color: white;
+
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--navy);
+        }
+
+
+        /* =========================================
+           SLIDER DOTS
+        ========================================= */
+
+        .hero-dots {
+            position: absolute;
+
+            z-index: 5;
+
+            bottom: 28px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            display: flex;
+            gap: 9px;
+        }
+
+        .hero-dot {
+            width: 10px;
+            height: 10px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            opacity: 0.4;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .hero-dot.active {
+            width: 28px;
+
+            border-radius: 10px;
+
+            background: var(--gold);
+
+            opacity: 1;
+        }
+
+
+        /* =========================================
+           STATS
+        ========================================= */
+
+        .stats {
+            background: var(--navy);
+
+            color: white;
+        }
+
+        .stats-container {
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 28px 25px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .stat {
+            text-align: center;
+
+            padding: 10px;
+
+            border-right:
+                1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat h3 {
+            color: var(--gold);
+
+            font-size: 27px;
+
+            margin-bottom: 3px;
+        }
+
+        .stat p {
+            color: #cbd5e1;
+
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================================
+           GENERAL SECTION
+        ========================================= */
+
+        section.content-section {
+            padding: 95px 25px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-heading {
+            max-width: 700px;
+
+            margin: 0 auto 55px;
+
+            text-align: center;
+        }
+
+        .section-heading small {
+            display: block;
+
+            color: var(--gold);
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            color: var(--navy);
+
+            font-size: 38px;
+
+            line-height: 1.2;
+
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: var(--gray);
+
+            font-size: 16px;
+        }
+
+
+        /* =========================================
+           ABOUT
+        ========================================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 65px;
+
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+
+            min-height: 430px;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 20px 50px rgba(7,26,47,0.15);
+        }
+
+        .about-badge {
+            position: absolute;
+
+            right: -20px;
+            bottom: 25px;
+
+            background: var(--gold);
+
+            color: var(--navy);
+
+            padding: 20px 24px;
+
+            border-radius: 7px;
+
+            font-weight: 900;
+
+            box-shadow:
+                0 12px 30px rgba(0,0,0,0.2);
+        }
+
+        .about-text small {
+            color: var(--gold);
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        .about-text h2 {
+            color: var(--navy);
+
+            font-size: 40px;
+
+            line-height: 1.2;
+
+            margin: 10px 0 20px;
+        }
+
+        .about-text p {
+            color: var(--gray);
+
+            margin-bottom: 17px;
+        }
+
+        .check-list {
+            list-style: none;
+
+            margin-top: 25px;
+        }
+
+        .check-list li {
+            margin-bottom: 12px;
+
+            color: var(--dark);
+
+            font-weight: 600;
+        }
+
+        .check-list li::before {
+            content: "✓";
+
+            color: var(--gold);
+
+            font-weight: 900;
+
+            margin-right: 10px;
+        }
+
+
+        /* =========================================
+           SERVICES
+        ========================================= */
+
+        .services {
+            background: var(--light);
+        }
+
+        .service-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+        .service-card {
+            background: white;
+
+            padding: 35px 28px;
+
+            border-radius: 8px;
+
+            border:
+                1px solid var(--border);
+
+            transition: 0.3s;
+
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+
+            border-color: var(--gold);
+
+            box-shadow:
+                0 15px 35px rgba(7,26,47,0.1);
+        }
+
+        .service-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 20px;
+
+            border-radius: 7px;
+
+            background:
+                rgba(212,175,55,0.12);
+
+            color: var(--gold);
+
+            font-size: 25px;
+        }
+
+        .service-card h3 {
+            color: var(--navy);
+
+            margin-bottom: 12px;
+
+            font-size: 20px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           WHY US
+        ========================================= */
+
+        .why {
+            background: var(--navy);
+
+            color: white;
+        }
+
+        .why .section-heading h2 {
+            color: white;
+        }
+
+        .why .section-heading p {
+            color: #b8c5d3;
+        }
+
+        .why-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .why-card {
+            padding: 30px 22px;
+
+            border:
+                1px solid rgba(255,255,255,0.1);
+
+            border-radius: 8px;
+
+            background:
+                rgba(255,255,255,0.04);
+        }
+
+        .why-number {
+            color: var(--gold);
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            margin-bottom: 20px;
+        }
+
+        .why-card h3 {
+            margin-bottom: 10px;
+
+            font-size: 18px;
+        }
+
+        .why-card p {
+            color: #b8c5d3;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           CTA
+        ========================================= */
+
+        .cta {
+            padding: 90px 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0b2745,
+                    #071a2f
+                );
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 42px;
+
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 650px;
+
+            margin: 0 auto 30px;
+
+            color: #cbd5e1;
+        }
+
+
+        /* =========================================
+           CONTACT
+        ========================================= */
+
+        .contact {
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                0.9fr 1.1fr;
+
+            gap: 55px;
+
+            align-items: start;
+        }
+
+        .contact-info h2 {
+            color: var(--navy);
+
+            font-size: 38px;
+
+            line-height: 1.2;
+
+            margin-bottom: 15px;
+        }
+
+        .contact-info > p {
+            color: var(--gray);
+
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+
+            gap: 15px;
+
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            flex-shrink: 0;
+
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                rgba(212,175,55,0.13);
+
+            color: var(--gold);
+
+            border-radius: 6px;
+        }
+
+        .contact-item h4 {
+            color: var(--navy);
+
+            font-size: 14px;
+
+            margin-bottom: 2px;
+        }
+
+        .contact-item p {
+            color: var(--gray);
+
+            font-size: 14px;
+        }
+
+        .contact-form {
+            padding: 35px;
+
+            border-radius: 8px;
+
+            background: var(--light);
+
+            border: 1px solid var(--border);
+        }
+
+        .form-row {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: var(--navy);
+
+            font-size: 13px;
+
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border:
+                1px solid #d7dce2;
+
+            border-radius: 5px;
+
+            background: white;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--gold);
+        }
+
+        .submit-button {
+            width: 100%;
+
+            border: none;
+
+            cursor: pointer;
+
+            padding: 14px;
+
+            border-radius: 5px;
+
+            background: var(--gold);
+
+            color: var(--navy);
+
+            font-weight: 800;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+        }
+
+        .submit-button:hover {
+            background: var(--navy);
+
+            color: white;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            background: #04101d;
+
+            color: white;
+
+            padding: 55px 25px 25px;
+        }
+
+        .footer-grid {
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1.5fr 1fr 1fr;
+
+            gap: 50px;
+
+            padding-bottom: 40px;
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-brand h3 {
+            font-size: 22px;
+
+            margin-bottom: 10px;
+        }
+
+        .footer-brand h3 span {
+            color: var(--gold);
+        }
+
+        .footer-brand p {
+            max-width: 420px;
+
+            color: #9caabd;
+
+            font-size: 14px;
+        }
+
+        .footer-column h4 {
+            color: var(--gold);
+
+            margin-bottom: 15px;
+
+            font-size: 14px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+        .footer-column a {
+            display: block;
+
+            color: #aebaca;
+
+            font-size: 14px;
+
+            margin-bottom: 9px;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .copyright {
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding-top: 22px;
+
+            color: #7f8b9b;
+
+            font-size: 12px;
+
+            text-align: center;
+        }
+
+
+        /* =========================================
+           MOBILE MENU
+        ========================================= */
+
+        .menu-toggle {
+            display: none;
+
+            border: 1px solid rgba(255,255,255,0.2);
+
+            background: transparent;
+
+            color: white;
+
+            width: 42px;
+            height: 42px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            font-size: 20px;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                gap: 16px;
+            }
+
+            .stats-container {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+            .service-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .why-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                height: 68px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+
+                position: absolute;
+
+                top: 68px;
+                left: 0;
+
+                width: 100%;
+
+                padding: 20px;
+
+                background: var(--navy);
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 0;
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            nav a {
+                padding: 13px 5px;
+
+                border-bottom:
+                    1px solid rgba(255,255,255,0.08);
+            }
+
+            .nav-button {
+                text-align: center;
+
+                margin-top: 10px;
+            }
+
+            .hero {
+                min-height: 650px;
+            }
+
+            .hero-content {
+                padding-top: 60px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .btn {
+                width: auto;
+            }
+
+            section.content-section {
+                padding: 70px 20px;
+            }
+
+            .section-heading h2,
+            .about-text h2 {
+                font-size: 31px;
+            }
+
+            .service-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+
+                padding: 22px 15px;
+            }
+
+            .stat {
+                border-right: none;
+            }
+
+            .about-image img {
+                min-height: 320px;
+            }
+
+            .about-badge {
+                right: 10px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 25px 20px;
+            }
+
+            .cta h2 {
+                font-size: 32px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header>
+
+    <div class="navbar">
+
+        <a href="#home" class="logo">
+
+            <div class="logo-mark">
+                G
+            </div>
+
+            <div class="logo-text">
+                Genesis
+                <span>Investment Service</span>
+            </div>
+
+        </a>
+
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open menu">
+            ☰
+        </button>
+
+
+        <nav id="mainNav">
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#services">Services</a>
+
+            <a href="#why-us">Why Us</a>
+
+            <a href="#contact">Contact</a>
+
+            <a
+                href="#contact"
+                class="nav-button">
+                Get Started
+            </a>
+
+        </nav>
+
     </div>
 
-    <div class="cover-overlay"></div>
+</header>
 
-    <div class="cover-content">
-        <h1>Genesis Investment Service</h1>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section
+    class="hero"
+    id="home">
+
+
+    <div class="hero-slides">
+
+
+        <img
+            src="Screenshot 2026-09-15 191144.png"
+            alt="Genesis Investment Service"
+            class="hero-slide active">
+
+
+        <img
+            src="Screenshot 2026-09-15 191112.png"
+            alt="Genesis Investment Service"
+            class="hero-slide">
+
+
+    </div>
+
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+
+        <span class="hero-label">
+            Genesis Investment Service
+        </span>
+
+
+        <h1>
+            Build Your
+            <span>Financial Future.</span>
+        </h1>
+
 
         <p>
-            Building wealth. Creating opportunities. Investing in your future.
+            Strategic investment solutions designed to
+            help individuals and businesses create
+            opportunities and pursue long-term growth.
         </p>
 
-        <a href="#contact" class="cover-button">
-            Get Started
-        </a>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#contact"
+                class="btn btn-primary">
+                Get Started
+            </a>
+
+            <a
+                href="#services"
+                class="btn btn-outline">
+                Explore Services
+            </a>
+
+        </div>
+
     </div>
 
-    <div class="slider-dots">
-        <span class="dot active-dot"></span>
-        <span class="dot"></span>
+
+    <div class="hero-dots">
+
+        <span
+            class="hero-dot active"
+            data-slide="0">
+        </span>
+
+        <span
+            class="hero-dot"
+            data-slide="1">
+        </span>
+
     </div>
 
 </section>
+
+
+
+<!-- =========================================
+     STATS
+========================================= -->
+
+<section class="stats">
+
+    <div class="stats-container">
+
+
+        <div class="stat">
+
+            <h3>
+                Growth
+            </h3>
+
+            <p>
+                Focused Strategy
+            </p>
+
+        </div>
+
+
+        <div class="stat">
+
+            <h3>
+                Trust
+            </h3>
+
+            <p>
+                Client First
+            </p>
+
+        </div>
+
+
+        <div class="stat">
+
+            <h3>
+                Vision
+            </h3>
+
+            <p>
+                Long Term
+            </p>
+
+        </div>
+
+
+        <div class="stat">
+
+            <h3>
+                Value
+            </h3>
+
+            <p>
+                Smart Decisions
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     ABOUT
+========================================= -->
+
+<section
+    class="content-section about"
+    id="about">
+
+
+    <div class="container">
+
+
+        <div class="about-grid">
+
+
+            <div class="about-image">
+
+                <img
+                    src="Screenshot 2026-09-15 191112.png"
+                    alt="Genesis Investment Service">
+
+
+                <div class="about-badge">
+                    Genesis<br>
+                    Investment
+                </div>
+
+            </div>
+
+
+            <div class="about-text">
+
+                <small>
+                    About Genesis
+                </small>
+
+                <h2>
+                    Turning Financial
+                    Vision Into Opportunity
+                </h2>
+
+                <p>
+                    Genesis Investment Service is focused on
+                    helping clients understand opportunities,
+                    make informed decisions and build a
+                    stronger financial future.
+                </p>
+
+                <p>
+                    Our approach combines strategic thinking,
+                    responsible decision-making and a
+                    long-term perspective.
+                </p>
+
+
+                <ul class="check-list">
+
+                    <li>
+                        Strategic financial thinking
+                    </li>
+
+                    <li>
+                        Opportunity-focused approach
+                    </li>
+
+                    <li>
+                        Long-term perspective
+                    </li>
+
+                    <li>
+                        Client-focused service
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SERVICES
+========================================= -->
+
+<section
+    class="content-section services"
+    id="services">
+
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <small>
+                What We Do
+            </small>
+
+            <h2>
+                Our Investment Services
+            </h2>
+
+            <p>
+                Practical and strategic solutions designed
+                around your goals and opportunities.
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ◈
+                </div>
+
+                <h3>
+                    Investment Planning
+                </h3>
+
+                <p>
+                    Develop a clear investment direction
+                    based on your objectives, priorities
+                    and long-term vision.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ◇
+                </div>
+
+                <h3>
+                    Wealth Strategy
+                </h3>
+
+                <p>
+                    Explore structured approaches to
+                    building, managing and growing wealth
+                    over time.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ◎
+                </div>
+
+                <h3>
+                    Business Investment
+                </h3>
+
+                <p>
+                    Identify opportunities that can support
+                    business development and sustainable
+                    financial progress.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ◆
+                </div>
+
+                <h3>
+                    Opportunity Analysis
+                </h3>
+
+                <p>
+                    Review potential opportunities and
+                    important considerations before making
+                    investment decisions.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    Financial Guidance
+                </h3>
+
+                <p>
+                    Get clear guidance to help you better
+                    understand financial and investment
+                    choices.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ✓
+                </div>
+
+                <h3>
+                    Long-Term Strategy
+                </h3>
+
+                <p>
+                    Build a disciplined approach focused
+                    on sustainable goals rather than
+                    short-term decisions.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     WHY US
+========================================= -->
+
+<section
+    class="content-section why"
+    id="why-us">
+
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <small>
+                Why Genesis
+            </small>
+
+            <h2>
+                A Clearer Approach To Investment
+            </h2>
+
+            <p>
+                We focus on clarity, strategy and
+                responsible decision-making.
+            </p>
+
+        </div>
+
+
+        <div class="why-grid">
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    01
+                </div>
+
+                <h3>
+                    Clear Thinking
+                </h3>
+
+                <p>
+                    We simplify complex ideas and focus
+                    on what matters to your objectives.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    02
+                </div>
+
+                <h3>
+                    Strategic Focus
+                </h3>
+
+                <p>
+                    Every opportunity deserves thoughtful
+                    analysis and a clear strategy.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    03
+                </div>
+
+                <h3>
+                    Long-Term Vision
+                </h3>
+
+                <p>
+                    We encourage decisions that support
+                    sustainable financial progress.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    04
+                </div>
+
+                <h3>
+                    Client Focus
+                </h3>
+
+                <p>
+                    Your goals and priorities remain at
+                    the center of the conversation.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CTA
+========================================= -->
+
+<section class="cta">
+
+
+    <div class="container">
+
+        <h2>
+            Ready To Explore Your Opportunities?
+        </h2>
+
+        <p>
+            Start a conversation with Genesis Investment
+            Service and take the next step toward a
+            stronger financial strategy.
+        </p>
+
+        <a
+            href="#contact"
+            class="btn btn-primary">
+            Contact Genesis
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTACT
+========================================= -->
+
+<section
+    class="content-section contact"
+    id="contact">
+
+
+    <div class="container">
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-info">
+
+                <h2>
+                    Let's Start A Conversation
+                </h2>
+
+                <p>
+                    Have a question or want to discuss
+                    an investment opportunity?
+                    Send us a message.
+                </p>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ✉
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Email
+                        </h4>
+
+                        <p>
+                            info@genesisinvestmentservice.com
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ☎
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Phone
+                        </h4>
+
+                        <p>
+                            Contact us for more information
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ◉
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Service
+                        </h4>
+
+                        <p>
+                            Investment & Financial Services
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <form
+                class="contact-form"
+                id="contactForm">
+
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Your name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Your email"
+                            required>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="service">
+                        Service
+                    </label>
+
+                    <select id="service">
+
+                        <option>
+                            Select a service
+                        </option>
+
+                        <option>
+                            Investment Planning
+                        </option>
+
+                        <option>
+                            Wealth Strategy
+                        </option>
+
+                        <option>
+                            Business Investment
+                        </option>
+
+                        <option>
+                            Opportunity Analysis
+                        </option>
+
+                        <option>
+                            Financial Guidance
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="How can we help?"
+                        required>
+                    </textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-button">
+
+                    Send Message
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+
+    <div class="footer-grid">
+
+
+        <div class="footer-brand">
+
+            <h3>
+                Genesis
+                <span>Investment Service</span>
+            </h3>
+
+            <p>
+                Building wealth. Creating opportunities.
+                Investing in the future through strategic
+                thinking and responsible decisions.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Quick Links
+            </h4>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Services
+            </h4>
+
+            <a href="#services">
+                Investment Planning
+            </a>
+
+            <a href="#services">
+                Wealth Strategy
+            </a>
+
+            <a href="#services">
+                Business Investment
+            </a>
+
+            <a href="#services">
+                Financial Guidance
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Genesis Investment Service.
+        All rights reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+
+    /* =====================================
+       IMAGE SLIDER
+    ===================================== */
+
+    const slides =
+        document.querySelectorAll(".hero-slide");
+
+    const dots =
+        document.querySelectorAll(".hero-dot");
+
+    let currentSlide = 0;
+
+
+    function showSlide(index) {
+
+        slides.forEach(function(slide) {
+
+            slide.classList.remove("active");
+
+        });
+
+
+        dots.forEach(function(dot) {
+
+            dot.classList.remove("active");
+
+        });
+
+
+        slides[index].classList.add("active");
+
+        dots[index].classList.add("active");
+
+        currentSlide = index;
+
+    }
+
+
+    function nextSlide() {
+
+        let next =
+            currentSlide + 1;
+
+        if (next >= slides.length) {
+            next = 0;
+        }
+
+        showSlide(next);
+
+    }
+
+
+    setInterval(
+        nextSlide,
+        5000
+    );
+
+
+    dots.forEach(function(dot, index) {
+
+        dot.addEventListener(
+            "click",
+            function() {
+
+                showSlide(index);
+
+            }
+        );
+
+    });
+
+
+
+    /* =====================================
+       MOBILE MENU
+    ===================================== */
+
+    const menuToggle =
+        document.getElementById(
+            "menuToggle"
+        );
+
+    const mainNav =
+        document.getElementById(
+            "mainNav"
+        );
+
+
+    menuToggle.addEventListener(
+        "click",
+        function() {
+
+            mainNav.classList.toggle(
+                "show"
+            );
+
+        }
+    );
+
+
+    /* Close menu after clicking */
+
+    document
+        .querySelectorAll("#mainNav a")
+        .forEach(function(link) {
+
+            link.addEventListener(
+                "click",
+                function() {
+
+                    mainNav.classList.remove(
+                        "show"
+                    );
+
+                }
+            );
+
+        });
+
+
+
+    /* =====================================
+       CONTACT FORM
+    ===================================== */
+
+    const contactForm =
+        document.getElementById(
+            "contactForm"
+        );
+
+
+    contactForm.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+            alert(
+                "Thank you! Your message has been received."
+            );
+
+            contactForm.reset();
+
+        }
+    );
+
+</script>
+
+
+</body>
+</html>
